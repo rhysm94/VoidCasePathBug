@@ -26,12 +26,5 @@ let package = Package(
         .product(name: "CasePaths", package: "swift-case-paths")
       ]
     ),
-    .testTarget(
-      name: "VoidCasePathBugTests",
-      dependencies: [
-        "VoidCasePathBug",
-        .product(name: "CasePaths", package: "swift-case-paths")
-      ]
-    ),
   ]
 )

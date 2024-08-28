@@ -14,3 +14,6 @@ public func withCasePath<Value>(
   print(casePath)
 }
 
+func test() {
+  withCasePath(casePath: \.didReceiveValue.success)
+}
