@@ -13,35 +13,35 @@ Stack dump:
 1.	Apple Swift version 6.0 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
 2.	Compiling with the current language version
 3.	While evaluating request IRGenRequest(IR Generation for file "/Users/rhysmorgan/Developer/VoidCasePathBug/Sources/VoidCasePathBug/VoidCasePathBug.swift")
-4.	While emitting IR SIL function "@$s15VoidCasePathBug4testyyF".
- for 'test()' (at /Users/rhysmorgan/Developer/VoidCasePathBug/Sources/VoidCasePathBug/VoidCasePathBug.swift:17:1)
+4.	While emitting IR SIL function "@$s15VoidCasePathBug6ActionO3bug_WZ".
+ for declaration 0x1329cb4b8 (at /Users/rhysmorgan/Developer/VoidCasePathBug/Sources/VoidCasePathBug/VoidCasePathBug.swift:11:3)
 Stack dump without symbol names (ensure you have llvm-symbolizer in your PATH or set the environment var `LLVM_SYMBOLIZER_PATH` to point to it):
-0  swift-frontend           0x00000001079ef0fc llvm::sys::PrintStackTrace(llvm::raw_ostream&, int) + 56
-1  swift-frontend           0x00000001079ed350 llvm::sys::RunSignalHandlers() + 112
-2  swift-frontend           0x00000001079ef6c8 SignalHandler(int) + 292
+0  swift-frontend           0x000000010a85b0fc llvm::sys::PrintStackTrace(llvm::raw_ostream&, int) + 56
+1  swift-frontend           0x000000010a859350 llvm::sys::RunSignalHandlers() + 112
+2  swift-frontend           0x000000010a85b6c8 SignalHandler(int) + 292
 3  libsystem_platform.dylib 0x0000000197a4c184 _sigtramp + 56
-4  swift-frontend           0x0000000103a7354c swift::Mangle::ASTMangler::appendConcreteProtocolConformance(swift::ProtocolConformance const*, swift::GenericSignature) + 1020
-5  swift-frontend           0x0000000103a738c0 swift::Mangle::ASTMangler::appendConcreteProtocolConformance(swift::ProtocolConformance const*, swift::GenericSignature) + 1904
-6  swift-frontend           0x00000001029b3ee0 swift::irgen::IRGenMangler::mangleSymbolNameForMangledConformanceAccessorString(char const*, swift::CanGenericSignature, swift::CanType, swift::ProtocolConformanceRef) + 208
-7  swift-frontend           0x000000010292fa28 swift::irgen::IRGenModule::emitWitnessTableRefString(swift::CanType, swift::ProtocolConformanceRef, swift::GenericSignature, bool) + 416
-8  swift-frontend           0x00000001028c6ca4 void llvm::function_ref<void (swift::GenericRequirement)>::callback_fn<emitKeyPathComponent(swift::irgen::IRGenModule&, swift::irgen::ConstantStructBuilder&, swift::KeyPathPatternComponent const&, bool, swift::GenericEnvironment*, llvm::ArrayRef<swift::GenericRequirement>, swift::CanType, llvm::ArrayRef<KeyPathIndexOperand>, bool)::$_0>(long, swift::GenericRequirement) + 628
-9  swift-frontend           0x000000010291bc28 swift::irgen::enumerateGenericSignatureRequirements(swift::CanGenericSignature, llvm::function_ref<void (swift::GenericRequirement)> const&) + 220
-10 swift-frontend           0x00000001028be020 emitKeyPathComponent(swift::irgen::IRGenModule&, swift::irgen::ConstantStructBuilder&, swift::KeyPathPatternComponent const&, bool, swift::GenericEnvironment*, llvm::ArrayRef<swift::GenericRequirement>, swift::CanType, llvm::ArrayRef<KeyPathIndexOperand>, bool) + 1368
-11 swift-frontend           0x00000001028bd3a8 swift::irgen::IRGenModule::getAddrOfKeyPathPattern(swift::KeyPathPattern*, swift::SILLocation) + 2848
-12 swift-frontend           0x00000001029dd0d4 (anonymous namespace)::IRGenSILFunction::visitSILBasicBlock(swift::SILBasicBlock*) + 12648
-13 swift-frontend           0x00000001029d8c50 (anonymous namespace)::IRGenSILFunction::emitSILFunction() + 13220
-14 swift-frontend           0x00000001029d5408 swift::irgen::IRGenModule::emitSILFunction(swift::SILFunction*) + 2088
-15 swift-frontend           0x0000000102821098 swift::irgen::IRGenerator::emitGlobalTopLevel(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>>> const&) + 3364
-16 swift-frontend           0x000000010298cc44 swift::IRGenRequest::evaluate(swift::Evaluator&, swift::IRGenDescriptor) const + 4700
-17 swift-frontend           0x00000001029d4954 swift::SimpleRequest<swift::IRGenRequest, swift::GeneratedModule (swift::IRGenDescriptor), (swift::RequestFlags)9>::evaluateRequest(swift::IRGenRequest const&, swift::Evaluator&) + 176
-18 swift-frontend           0x0000000102995b3c swift::IRGenRequest::OutputType swift::Evaluator::getResultUncached<swift::IRGenRequest, swift::IRGenRequest::OutputType swift::evaluateOrFatal<swift::IRGenRequest>(swift::Evaluator&, swift::IRGenRequest)::'lambda'()>(swift::IRGenRequest const&, swift::IRGenRequest::OutputType swift::evaluateOrFatal<swift::IRGenRequest>(swift::Evaluator&, swift::IRGenRequest)::'lambda'()) + 784
-19 swift-frontend           0x000000010298f574 swift::performIRGeneration(swift::FileUnit*, swift::IRGenOptions const&, swift::TBDGenOptions const&, std::__1::unique_ptr<swift::SILModule, std::__1::default_delete<swift::SILModule>>, llvm::StringRef, swift::PrimarySpecificPaths const&, llvm::StringRef, llvm::GlobalVariable**) + 180
-20 swift-frontend           0x000000010239e85c generateIR(swift::IRGenOptions const&, swift::TBDGenOptions const&, std::__1::unique_ptr<swift::SILModule, std::__1::default_delete<swift::SILModule>>, swift::PrimarySpecificPaths const&, llvm::StringRef, llvm::PointerUnion<swift::ModuleDecl*, swift::SourceFile*>, llvm::GlobalVariable*&, llvm::ArrayRef<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>>) + 156
-21 swift-frontend           0x000000010239a088 performCompileStepsPostSILGen(swift::CompilerInstance&, std::__1::unique_ptr<swift::SILModule, std::__1::default_delete<swift::SILModule>>, llvm::PointerUnion<swift::ModuleDecl*, swift::SourceFile*>, swift::PrimarySpecificPaths const&, int&, swift::FrontendObserver*) + 2176
-22 swift-frontend           0x0000000102398f74 swift::performCompileStepsPostSema(swift::CompilerInstance&, int&, swift::FrontendObserver*) + 984
-23 swift-frontend           0x000000010239c228 performCompile(swift::CompilerInstance&, int&, swift::FrontendObserver*) + 1680
-24 swift-frontend           0x000000010239af58 swift::performFrontend(llvm::ArrayRef<char const*>, char const*, void*, swift::FrontendObserver*) + 3572
-25 swift-frontend           0x000000010232201c swift::mainEntry(int, char const**) + 3680
+4  swift-frontend           0x00000001068df54c swift::Mangle::ASTMangler::appendConcreteProtocolConformance(swift::ProtocolConformance const*, swift::GenericSignature) + 1020
+5  swift-frontend           0x00000001068df8c0 swift::Mangle::ASTMangler::appendConcreteProtocolConformance(swift::ProtocolConformance const*, swift::GenericSignature) + 1904
+6  swift-frontend           0x000000010581fee0 swift::irgen::IRGenMangler::mangleSymbolNameForMangledConformanceAccessorString(char const*, swift::CanGenericSignature, swift::CanType, swift::ProtocolConformanceRef) + 208
+7  swift-frontend           0x000000010579ba28 swift::irgen::IRGenModule::emitWitnessTableRefString(swift::CanType, swift::ProtocolConformanceRef, swift::GenericSignature, bool) + 416
+8  swift-frontend           0x0000000105732ca4 void llvm::function_ref<void (swift::GenericRequirement)>::callback_fn<emitKeyPathComponent(swift::irgen::IRGenModule&, swift::irgen::ConstantStructBuilder&, swift::KeyPathPatternComponent const&, bool, swift::GenericEnvironment*, llvm::ArrayRef<swift::GenericRequirement>, swift::CanType, llvm::ArrayRef<KeyPathIndexOperand>, bool)::$_0>(long, swift::GenericRequirement) + 628
+9  swift-frontend           0x0000000105787c28 swift::irgen::enumerateGenericSignatureRequirements(swift::CanGenericSignature, llvm::function_ref<void (swift::GenericRequirement)> const&) + 220
+10 swift-frontend           0x000000010572a020 emitKeyPathComponent(swift::irgen::IRGenModule&, swift::irgen::ConstantStructBuilder&, swift::KeyPathPatternComponent const&, bool, swift::GenericEnvironment*, llvm::ArrayRef<swift::GenericRequirement>, swift::CanType, llvm::ArrayRef<KeyPathIndexOperand>, bool) + 1368
+11 swift-frontend           0x00000001057293a8 swift::irgen::IRGenModule::getAddrOfKeyPathPattern(swift::KeyPathPattern*, swift::SILLocation) + 2848
+12 swift-frontend           0x00000001058490d4 (anonymous namespace)::IRGenSILFunction::visitSILBasicBlock(swift::SILBasicBlock*) + 12648
+13 swift-frontend           0x0000000105844c50 (anonymous namespace)::IRGenSILFunction::emitSILFunction() + 13220
+14 swift-frontend           0x0000000105841408 swift::irgen::IRGenModule::emitSILFunction(swift::SILFunction*) + 2088
+15 swift-frontend           0x000000010568d098 swift::irgen::IRGenerator::emitGlobalTopLevel(std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>>> const&) + 3364
+16 swift-frontend           0x00000001057f8c44 swift::IRGenRequest::evaluate(swift::Evaluator&, swift::IRGenDescriptor) const + 4700
+17 swift-frontend           0x0000000105840954 swift::SimpleRequest<swift::IRGenRequest, swift::GeneratedModule (swift::IRGenDescriptor), (swift::RequestFlags)9>::evaluateRequest(swift::IRGenRequest const&, swift::Evaluator&) + 176
+18 swift-frontend           0x0000000105801b3c swift::IRGenRequest::OutputType swift::Evaluator::getResultUncached<swift::IRGenRequest, swift::IRGenRequest::OutputType swift::evaluateOrFatal<swift::IRGenRequest>(swift::Evaluator&, swift::IRGenRequest)::'lambda'()>(swift::IRGenRequest const&, swift::IRGenRequest::OutputType swift::evaluateOrFatal<swift::IRGenRequest>(swift::Evaluator&, swift::IRGenRequest)::'lambda'()) + 784
+19 swift-frontend           0x00000001057fb574 swift::performIRGeneration(swift::FileUnit*, swift::IRGenOptions const&, swift::TBDGenOptions const&, std::__1::unique_ptr<swift::SILModule, std::__1::default_delete<swift::SILModule>>, llvm::StringRef, swift::PrimarySpecificPaths const&, llvm::StringRef, llvm::GlobalVariable**) + 180
+20 swift-frontend           0x000000010520a85c generateIR(swift::IRGenOptions const&, swift::TBDGenOptions const&, std::__1::unique_ptr<swift::SILModule, std::__1::default_delete<swift::SILModule>>, swift::PrimarySpecificPaths const&, llvm::StringRef, llvm::PointerUnion<swift::ModuleDecl*, swift::SourceFile*>, llvm::GlobalVariable*&, llvm::ArrayRef<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>>) + 156
+21 swift-frontend           0x0000000105206088 performCompileStepsPostSILGen(swift::CompilerInstance&, std::__1::unique_ptr<swift::SILModule, std::__1::default_delete<swift::SILModule>>, llvm::PointerUnion<swift::ModuleDecl*, swift::SourceFile*>, swift::PrimarySpecificPaths const&, int&, swift::FrontendObserver*) + 2176
+22 swift-frontend           0x0000000105204f74 swift::performCompileStepsPostSema(swift::CompilerInstance&, int&, swift::FrontendObserver*) + 984
+23 swift-frontend           0x0000000105208228 performCompile(swift::CompilerInstance&, int&, swift::FrontendObserver*) + 1680
+24 swift-frontend           0x0000000105206f58 swift::performFrontend(llvm::ArrayRef<char const*>, char const*, void*, swift::FrontendObserver*) + 3572
+25 swift-frontend           0x000000010518e01c swift::mainEntry(int, char const**) + 3680
 26 dyld                     0x0000000197694274 start + 2840
 
 SwiftCompile normal arm64 /Users/rhysmorgan/Developer/VoidCasePathBug/Sources/VoidCasePathBug/VoidCasePathBug.swift (in target 'VoidCasePathBug' from project 'VoidCasePathBug')
@@ -54,4 +54,4 @@ Command SwiftCompile failed with a nonzero exit code
 
 
 
-Build failed    28/08/2024, 09:13    0.3 seconds
+Build failed    28/08/2024, 09:36    0.4 seconds
