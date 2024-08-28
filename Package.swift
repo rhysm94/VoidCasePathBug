@@ -15,16 +15,7 @@ let package = Package(
       targets: ["VoidCasePathBug"]
     ),
   ],
-  dependencies: [
-    // CasePaths
-    .package(url: "https://github.com/pointfreeco/swift-case-paths.git", from: "1.0.0")
-  ],
   targets: [
-    .target(
-      name: "VoidCasePathBug",
-      dependencies: [
-        .product(name: "CasePaths", package: "swift-case-paths")
-      ]
-    ),
+    .target(name: "VoidCasePathBug")
   ]
 )
