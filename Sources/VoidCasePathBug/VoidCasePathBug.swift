@@ -6,14 +6,6 @@ import CasePaths
 @CasePathable
 public enum Action {
   case didReceiveValue(Result<Void, any Error>)
-}
 
-public func withCasePath<Value>(
-  casePath: CaseKeyPath<Action, Value>
-) {
-  print(casePath)
-}
-
-func test() {
-  withCasePath(casePath: \.didReceiveValue.success)
+  static let bug = \Action.Cases.didReceiveValue.success
 }
